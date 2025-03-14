@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tove Meat & Bar - Gallery</title>
+    <style>
+        /* General Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+}
+
+/* Header Navigation */
+header {
+    background: transparent;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-right: 20px;
+}
+
+.logo span {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.nav-links {
+    margin-left: 500px;
+    list-style: none;
+    display: flex;
+    gap: 70px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.nav-links a.active {
+    border-bottom: 2px solid white;
+}
+
+/* Hero Section */
+.hero {
+    height: 60vh;
+    background: url('hero-food5.jpeg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: rgb(243, 239, 239);
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image:  url(https://media-hosting.imagekit.io//f6065498b19c48b3/gal%20background%20img.jpg?Expires=1836029670&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=J4SjYhERQl1IaTwEiafYCLEaFWVsYm~7M5qz3wAUxaj8GJspvv6W4GZSXo5V89BtbCbmn1Nm7bE~7z2kAKyp4d8CaZ6Yd1wy13Qu7Ssif0dVrWxgjz-6VGQB2FKEJ7jMW4UU0hw3RfL2A2Amp29yIKzk3vTznETm-Q1wORcqNExyC2sdfgb7FEjVjUq1aT-fqzvRt0r-VxstU9rx0fqNPDqkMmwkmRCcCmYhLARqaHCveBN6MCrZlAsPVm4UqaNg1TcHM3XlG7qmB0Hj6JvqGmSqygN3wLlKzCYdv76cQhWqeMNFDQ1lkhCP-i0XV~s9R3EpJg5E9eE4dpYvUW6ANA__);
+}
+
+.hero-text {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-text h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    text-transform: uppercase;
+}
+
+/* Gallery Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 20px 50px;
+    background: white;
+}
+
+.gallery-item {
+    overflow: hidden;
+    height: 200px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo">TOVE <span>mat & bar</span></div>
+        <ul class="nav-links">
+            <li><a href="#">HOME</a></li>
+            <li><a href="#" class="active">GALLERY</a></li>
+            <li><a href="#">MENU</a></li>
+            <li><a href="#">CONTACT</a></li>
+            <li><a href="#">BOOKING</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-text">
+        <h2>Tove meat & bar</h2>
+        <h1>GALLERY</h1>
+    </div>
+</section>
+
+<section class="gallery-grid">
+    <div class="gallery-item"><img src=https://media-hosting.imagekit.io//f6065498b19c48b3/gal%20background%20img.jpg?Expires=1836029670&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=J4SjYhERQl1IaTwEiafYCLEaFWVsYm~7M5qz3wAUxaj8GJspvv6W4GZSXo5V89BtbCbmn1Nm7bE~7z2kAKyp4d8CaZ6Yd1wy13Qu7Ssif0dVrWxgjz-6VGQB2FKEJ7jMW4UU0hw3RfL2A2Amp29yIKzk3vTznETm-Q1wORcqNExyC2sdfgb7FEjVjUq1aT-fqzvRt0r-VxstU9rx0fqNPDqkMmwkmRCcCmYhLARqaHCveBN6MCrZlAsPVm4UqaNg1TcHM3XlG7qmB0Hj6JvqGmSqygN3wLlKzCYdv76cQhWqeMNFDQ1lkhCP-i0XV~s9R3EpJg5E9eE4dpYvUW6ANA__ alt="Dish 1"></div>
+    <div class="gallery-item"><img src=https://media-hosting.imagekit.io//63de44bf862643ff/gal%20restaurent%20img1.jpg?Expires=1836029922&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=U8NEUbdbF2UHtF8MAl8nR1~Qw9V-PLzJ2PUDxN54eS-uptj9VqHlnHIAWairV8nORxSNq2CW92bcTniOCWMsrKJSvHGWWTs0Sgqa1eYmWQi6RAoMDapMgauowgI81rL4PNxyTjDqKGXJm3q2abjkL4j4x4u0xB-rmZPO2ztzvcP3tmIrTKU7AAemcCNZUEbJKBBlbfosCpvnN~h9p9NmQHjoga18dXr8ECQOCLwXBz1zh0~cC8YLJ78f9kcr3Fvw4kWzz4en~LFrxfYDnpg-U4x-GBn4qbdh1SD7WFD5lVb9VakvJeu4Vb8GxEsNB-4hqFdEi-uVrVPlMnC773iLyg__ alt="Restaurant exterior"></div>
+    <div class="gallery-item"><img src=https://media-hosting.imagekit.io//e1fa4430d616426f/gal%20food%20img.jpg?Expires=1836030614&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=B9ZULmaPbALzGvniLt8wLRyAixzFB5gVAELpWO5iid5cLYrGZM8GpLGSFqLfL8c187KRmhw~9iIV63dzWCN1Zui7OigP1ggE3v-xRaBuHL~lUoEVYZYIZmlrjGdvO6ZUCrp8xN3WLlenwAx7rkXIKKkCDjsZubEktTGEbNjfMjkQNtJtJEqixr6qZGgCo0FVXIkJiIxLHok1mk6o5qAVaVPPfCz1wqz-xjAZ4XP6yx-UqYb2IXBMNAFaERfEkPieZeVNtFdHCIGCu25N5ofHOYXwxj3bjVBMnFeXslN4vp5GsGSLPrNcqJpALUcloi4HJCmVlnfLoFfi~dRb-7MVWg__ alt="Dish 4"></div>
+    <div class="gallery-item"><img src=https://media-hosting.imagekit.io//cd711a439c9b433d/gal%20food%20img6.jpg?Expires=1836029922&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=TBAgUZlsEDXKags7gM0DqMUeVD27r~xqDqg4MKBH4oLE2vgCrm4lza6JfHIzXzLbYGTW-LXUPsK8tnmz1yQM8WQNIJcwQFQw-wCCItW0LtNVd6e4A7EZoBsHOdqOt6V4V3KIc2PE5tCBaEU3myGQHbGI7AGaJ1V2ERqki2PPu6pQImYYipv889nxEmjtwwNH01wfQzD~buoKA3FjKCq7FKyOjlXvYJ5Z8f6ouHV6q0eaXUi11RolUx68sf~pd1IJnB9IXa6h7sKr9GzsWWLF6BfzPob~ZzxGwSgxC7ZW~LRlt1iOVBoSN6RFIk7J96ZWJjC4b0bqGAF~WHNENDrIiQ__ alt="Dish 5"></div>
+    <div class="gallery-item"><img src=https://media-hosting.imagekit.io//8fb70ed800234848/gal%20restaurent%20img2.jpg?Expires=1836029922&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=S4F7wi6hWpsjU-9P--CUPUERoZ4arwkGZuYINygsAN540huS5IZT3inoAjH2sGb~9Y6~RhNC0UOMlxW1xh~n19Km0wKT-xfJNYY1YpkqwS4NQGoOv7v3-VjDPfterH-qRTXp3fYgoAIzrFk9kJL~AmfZ~kT-koam0u2AwjePHIRaBROQdkiuS6CAiCZFOEotRU4FFjfJcEcaTDb9D~BMmtNOy5hs4DxlyiD-8NQ1UWJAFZ8ysdU1zoDx5aj7ULs2lChsUkw9c5IYweDMwcyCAqSM~zuSISyC8PTDbVZx~tEy-gup-qMwmmhWA~bqx3ii9LypOoPUctfW7j7Db1r14Q__ alt="Restaurant exterior"></div>
+    <div class="gallery-item"><img src=https://media-hosting.imagekit.io//e5c0d805d4a34db1/gal%20food%20img4.jpg?Expires=1836029922&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=DATWR84sDBKAHtbOeevPEZtjP29XnUVOofD~QvGh9uxyKUwCXyS~6KHKVblYNc8v7S4Za0r3rZ7WtpdKCvr97H6iCg4AWqbA8lZ~4uxfJeRYIMaWdV7w9lTMuXjo0Pm3NExfA04pD2kSxW7jOOgjlNs8L3jTPbeze5oXnQ7JNZTM7fcfzE5MScu14jh7X5BQdNsohvIPWkQdgTyyEBQEGd4wwSbqp92HKnWuG1QRt82JjrXBliJNFR4n~pSqQn8iQ6~n8hX9tToy~m5ZAQGtsLYW7Piwar5NvHvvv98uu0W7eZ-286O3o7norCTKG-3cUa-QPNJWToPrnppls4ZgpQ__ alt="Restaurant exterior"></div>
+    <div class="gallery-item"><img src=https://media-hosting.imagekit.io//4989058bf22c454e/gal%20food%20img7.jpg?Expires=1836029922&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=okxedO~85x5pOvstBFSw~8iRz6ybhIVbrgzHGYz4p86eH02DDGf~~iqYseYxEXlFvaJ0BphZH~gq0NeyVk8W0KgxuikRyEyBwmpGYCgdce7jVb6Sr27jbeG4RtAwwLqtZKzLsiVW6jl85FlcO~B13QnYkWbLtvcHZ9CsXPsCgtQszB4IoteZFfwSURgpSmCVC-z2LZ4quwzf-ApVYSjO9YBFq0uQtKyP2ifGhMNbQXYU1CAM0AuUhm~A3RY5iMsfT4w4D5XqBnDpBI-6-CrxdAmoqd6kMz7D1CqkT-lWtCDpKtqFlra3ZE7j0OXhv4PxrtOq9D61jSxbCtoFQnuM8A__ alt="Dish 6"></div>
+    <div class="gallery-item"><img src=https://media-hosting.imagekit.io//0ac910b036a34cd7/gal%20restaurent%20img3.jpg?Expires=1836029922&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=tgzlGPmYhUonswtHaucQzs5FfWMyiDEozc9z-vV93UBKcDfEwA4EsnvEML8G7pF05c96hyL6rItxBgSdSNInDmBHGOMXuPM3YqzBEgGYqPe0x1Tcz07X8p0JnotmJNhq28CVzN6J6vSVm4i36ibk~6T8fPYPS8GIjBVDpkVUiKgjogFgIZ0UQmw~oHBf6A643xnQVoW-jftnJ6Z6pus3fw8Bajmcu-Zxnmfj0vC6cP6FQa-RYNRYamIW01qrAcvwiVfY9pUN4HTDb1rA0fL63Vts2~~LBIXSdry63-LHJH~Qd8kC7Wm2fkgS4x5hxZjIL9jRxL46tgHW37qpJSODfg__ alt="Restaurant exterior"></div>
+    <div class="gallery-item"><img src=https://media-hosting.imagekit.io//2e9b507ef4be40bb/live%20kitchen.jpg.jpeg?Expires=1836031019&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=E3-WI04EfDpyimfVGs1EUC6c5JcaQSPIEeIrB3Yy~ygJybltIiEY4EH4DPI1m~jdSHu6pAGDzX9LvQsl5ZUnav2ra7FRcvA9j02k~vWvND-3tu4ca3-o2l0DiOkR9JdSEOR-S5vxgucAVpwlK8yf2j33ZVG9ua-Ea5CvY0FqpBCv5MoRFGXOZ3h977yiyrdO~~nCgAg8DHXHgx4Oh8pVENTaivgqlTT6AvBt5ihoPf7atQXz9r-TItqjXQxA-jk1Mxuucn05ehyUcma6~zFhaK5uuvc0GvNQJX6eHQ0pD7nqqP7LTkh7nxovHcFEk0HW8yDlt2wY9P0l6cfjddeT0A__ alt="Dish 2"></div>
+    <div class="gallery-item"><img src=https://media-hosting.imagekit.io//34e3c7cfad3f417f/gal%20food%20img2.jpg?Expires=1836029922&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=le69A-SkBefC0QHt3jTTr1W1wg-oAyackYwZZZ~TDBA4lNAgqGDnlEhq4QZSYMrpm8kza0ckCjpQXSoZX02Gliur6P8o09BSM7v79VRh05PCdIyQCIQih~TIUk10Ji6qsaa-DGv8LF~lAq4GzeY6y8PnN17InRzGKq2fE-sx1ry71kgXHfxDhFxuzrUuz~CwdnwYdCDKCtnkNW3HaDH-hkcts6AFlRT0cFVfsxK9WNzkvm4fpEGZOYAHIw1EelU~k0PJiYOpidDxyuaJOTkkRlswCncSOD7PkYv~X1jg-wWZd7o2NieMCWysQh6p9Y4WGEx5LsD8EfsCTpkJvRFbBA__ alt="Dish 3"></div>
+    <div class="gallery-item"><img src=https://media-hosting.imagekit.io//24742c97dbcf450b/gal%20restaurent%20img5.jpg?Expires=1836029922&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=zfPDoK85WFfziJlIanmUsq6qnmOcZrFCndCLizRtXIbIbDy8bnc7YDNeTPIGfsW1YyL~Th83YipVpKe~fx8D4ZIgr-jGzxdp5ca-snynvrX~I6OR44l0EXvylOLBMM5jOhwWf0bGnHLwre-4UQqx-hEyJTXjS8ryPw9JCPNtxeP6ses0RxRCoajCDAn68WRFhP970DBvgx2~VYm9HF5M~hvwwsZTQ6I3mzYnGWxGNeDwWyp38vpMZK1C8yzQHMUKjLjdkeQxNKvstlNvNou7p70NtJufRKUoJ5trA-wReqkCAiI7qFZI2SWTAiOe~fSi32MGSR01M~TldPFu~4c5gw__ alt="Restaurant exterior"></div>
+    <div class="gallery-item"><img src=https://media-hosting.imagekit.io//3ed83c60611645e8/gal%20food%20img5.jpg?Expires=1836029922&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=0-aSyv240BagG5VpcBOcSvY1zFpUdkMdPOoi64mU9w1HE87gRmvG9DolNtISDHQKPtn4jGo8TBbQi4g5~IySUFDck365mubnlK6grvLZ71BhPhPqTSaKML-eW2zTQCoe1nF7xMN9DSU3VfTQvmpWy8KrjK7wu0yMHPOxmyseiFPjI4t-rA-UpxYnd5~7T5gzx8G2WEzR8Tc1UNEaF9x2gJ3lF0kCcpcR9WVe-iW3k7nV9DgeSI5-FdrNcHsBtRRKK53PaDmFJKK-NMJJ016ZKcSUt5u33C30Sx17CzWcGwwhoAeXAfOCMlj7loJJPhbPIu7aRZ8RBethkDLablCqRg__ alt="Restaurant exterior"></div>
+</section>
+
+</body>
+</html>

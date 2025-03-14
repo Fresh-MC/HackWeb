@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ee6060, #ec6666);
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .login-container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 350px;
+            position: relative;
+            overflow: hidden;
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+            color: #444;
+        }
+        .login-container input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 12px;
+            background: #e98888;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .login-container button:hover {
+            background: #5563c1;
+            transform: scale(1.05);
+        }
+        .toggle-mode {
+            margin-top: 10px;
+            color: #667eea;
+            cursor: pointer;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        .toggle-mode:hover {
+            color: #444;
+        }
+        .floating-icons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+        .floating-icons span {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            animation: float 5s infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0); opacity: 0.8; }
+            50% { transform: translateY(-20px); opacity: 0.4; }
+            100% { transform: translateY(0); opacity: 0.8; }
+        }
+    </style>
+</head>
+<body>
+    <form action="login" method="POST">
+        {%csrf_token%}
+        <div class="login-container">
+            <h2>Login</h2>
+            <input type="text" placeholder="Username" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Sign In</button>
+            <div class="toggle-mode">Don't have an account? Sign Up</div>
+            <div class="floating-icons">
+                <span style="top: 10%; left: 20%; animation-duration: 6s;"></span>
+                <span style="top: 50%; left: 80%; animation-duration: 4s;"></span>
+                <span style="top: 70%; left: 40%; animation-duration: 5.5s;"></span>
+                <span style="top: 30%; left: 60%; animation-duration: 3.8s;"></span>
+            </div>
+        </div>
+    </form>
+    <div>
+        {%for message in messages%}
+        <h3>{{message}}</h3>
+        {%endfor%}
+    </div>
+</body>
+</html>
+
+        

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>TOVE Restaurant</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: url('your-image.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgb(26, 15, 15)te;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.navbar a {
+    color: rgb(26, 15, 15);
+    font-size: 14px;
+    text-transform: uppercase;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: opacity 0.3s ease;
+}
+
+.navbar a:hover {
+    opacity: 0.7;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.hero h1 {
+    font-size: 90px;
+    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 10px;
+}
+
+.hero p {
+    font-size: 24px;
+    font-style: italic;
+    margin-top: -15px;
+}
+
+/* Buttons */
+.buttons {
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 10px;
+    color: rgb(246, 239, 239);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: rgb(152, 70, 70);
+    color: black;
+}
+        #myImage {
+            transition: opacity 1s ease-in-out;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            z-index: -1;
+        }
+        body {
+            height: 2000px; /* Make the page long enough to scroll */
+            margin: 0;
+            transition: background-color 0.5s ease; /* Smooth transition */
+        }
+        #scroll-indicator {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 1000; /* Ensure it's on top */
+        }
+        .hero {
+          position: relative; /needed for scroll to work/
+        }
+        .login{
+            margin-top: -1000px;
+            margin-left: -65px;
+        }
+        .navbar a:hover,
+        .navbar a.active{
+            color: rgba(100, 7, 7, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="{% url 'login' %}"><i class="fa-regular fa-user"></i></a>
+        <a href="#"  class="active">HOME</a>
+        <a href="{% url 'gall' %}">GALLERY</a>
+        <a href="{% url 'key' %}">EXCLUSIVE FEATURES</a>
+        <a href="{% url 'ar' %}">VIRTUAL TOUR</a>
+        <a href="{% url 'contact' %}" class="btn">CONTACT</a>
+        <a href="{% url 'book' %}">BOOKING</a>
+    </nav>
+<div class="login">
+    <section class="hero">
+        <div class="hero-content">
+            <h1 style="font-size: 110px; color: rgba(255, 255, 255, 0.653);">T O V E</h1>
+            <p style="color: rgba(255, 255, 255, 0.631);">meat & bar</p>
+            <div class="buttons">
+                <a href="{% url 'menu' %}" class="btn" style="color: white; font-weight: bold;">MENU</a>
+                <a href="{% url 'book' %}" class="btn" style="color: white; font-weight: bold;">BOOKING</a>
+                <a href="{% url 'event' %}" class="btn" style="color: white; font-weight: bold;">EVENTS</a>
+            </div>
+        </div>
+    </section>
+</div>
+    <img id="myImage" src="https://assets.architecturaldigest.in/photos/6008314c274aca243711bbb3/master/w_1600%2Cc_limit/Fs3.jpg" alt="Image 1">
+
+    <div id="scroll-indicator">Scroll Position: 0</div>
+
+    
+
+    <script>
+        function fadeImage() {
+            var image = document.getElementById("myImage");
+            if (image.src.endsWith("New Bitmap image.png")) {
+                image.style.opacity = 0;
+                setTimeout(function() {
+                    image.src = "freepik_the-style-is-candid-image-photography-with-natural_24280.jpeg";
+                    image.alt = "Image 2";
+                    image.style.opacity = 1;
+                }, 1000);
+            } else if (image.src.endsWith("freepik_the-style-is-candid-image-photography-with-natural_24280.jpeg")){
+                image.style.opacity = 0;
+                setTimeout(function() {
+                    image.src = "freepik_the-style-is-candid-image-photography-with-natural_24287.jpeg";
+                    image.alt = "Image 3";
+                    image.style.opacity = 1;
+                }, 1000);
+            }
+            else {
+                image.style.opacity = 0;
+                setTimeout(function() {
+                    image.src = "New Bitmap image.png";
+                    image.alt = "Image 1";
+                    image.style.opacity = 1;
+                }, 1000);
+            }
+        }
+
+       setInterval(fadeImage, 7000);
+
+       const scrollIndicator = document.getElementById('scroll-indicator');
+
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY;
+            scrollIndicator.textContent = Scroll Position: ${scrollPosition};
+
+            if (scrollPosition > 1000) {
+              document.body.style.backgroundColor = '#f39c12';
+            }
+            else if(scrollPosition > 500){
+              document.body.style.backgroundColor = '#16a085';
+            }
+            else{
+                document.body.style.backgroundColor = '#ffffff';
+            }
+        });
+    </script>
+</body>
+</html>

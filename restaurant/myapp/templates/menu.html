@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .navbar {
+            background: #444;
+            padding: 15px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .navbar a:hover {
+            color: #f5a623;
+        }
+        .menu-container {
+            max-width: 900px;
+            margin: 100px auto 50px;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            position: relative;
+            opacity: 1;
+            transform: none;
+        }
+        .menu-section {
+            margin-bottom: 50px;
+            padding: 20px;
+            border-left: 6px solid #999;
+            background: #f5f5f5;
+            border-radius: 12px;
+            transition: background 0.3s ease-in-out;
+        }
+        .menu-section:hover {
+            background: #e8e8e8;
+        }
+        .menu-item {
+            display: flex;
+            align-items: center;
+            padding: 25px 0;
+            border-bottom: 1px dashed #aaa;
+            transition: transform 0.3s ease-in-out;
+        }
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+        .menu-item:hover {
+            transform: scale(1.05);
+        }
+        .menu-item img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            margin-right: 30px;
+            object-fit: cover;
+            border: 4px solid #ddd;
+            transition: transform 0.3s ease-in-out;
+        }
+        .menu-item:hover img {
+            transform: rotate(5deg) scale(1.1);
+        }
+        .menu-item .info {
+            flex: 1;
+        }
+        .menu-item .name {
+            font-weight: bold;
+            font-size: 1.4em;
+            color: #444;
+        }
+        .menu-item .description {
+            font-size: 1em;
+            color: #666;
+        }
+        .menu-item .price {
+            color: #222;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#starters">Starters</a>
+        <a href="#beverages">Beverages</a>
+        <a href="#desserts">Desserts</a>
+        <a href="./booking.html">Online Booking</a>
+    </div>
+    <div class="img">
+        <img src="https://i.imgur.com/KTxEp9x.jpeg" alt="" style="width: 1700px; height: 1000px;">
+    </div>
+    <div class="menu-container">
+        <div class="menu-header" style="font-size: 45px;font-weight: lighter;">Our Exquisite menu</div>
+        
+        <div class="menu-section" id="starters">
+            <h2>Starters</h2>
+            <div class="menu-item">
+                <img src="https://th.bing.com/th/id/OIP.Cj_BVvXXKcyt4mkXxX3T_QAAAA?rs=1&pid=ImgDetMain" alt="Caesar Salad">
+                <div class="info">
+                    <span class="name">Caesar Salad</span>
+                    <p class="description">Fresh romaine lettuce, parmesan cheese, and croutons tossed in a creamy Caesar dressing.</p>
+                </div>
+                <span class="price">₹ 219</span>
+            </div>
+        </div>
+        
+        <div class="menu-section" id="beverages">
+            <h2>Beverages</h2>
+            <div class="menu-item">
+                <img src="https://cdn.create.vista.com/api/media/small/274322074/stock-video-pouring-healthy-fresh-lemonade-ice-mint-jug-glass-healthy-drinking?videoStaticPreview=true&token=" alt="Fresh Lemonade">
+                <div class="info">
+                    <span class="name">Fresh Lemonade</span>
+                    <p class="description">Refreshing homemade lemonade with a hint of mint.</p>
+                </div>
+                <span class="price">₹ 99</span>
+            </div>
+            <div class="menu-item">
+                <img src="https://img.freepik.com/free-photo/vertical-closeup-plastic-cup-cold-coffee-with-vanilla-cream_181624-57827.jpg" alt="Iced Coffee">
+                <div class="info">
+                    <span class="name">Iced Coffee</span>
+                    <p class="description">Chilled espresso with milk and vanilla syrup.</p>
+                </div>
+                <span class="price">₹ 149</span>
+            </div>
+        </div>
+        
+        <div class="menu-section" id="desserts">
+            <h2>Desserts</h2>
+            <div class="menu-item">
+                <img src="https://assets.epicurious.com/photos/561026ebf9a84192308aa525/master/pass/104604.jpg" alt="Chocolate Lava Cake">
+                <div class="info">
+                    <span class="name">Chocolate Lava Cake</span>
+                    <p class="description">Warm chocolate cake with a gooey molten center, served with vanilla ice cream.</p>
+                </div>
+                <span class="price">₹ 249</span>
+            </div>
+            <div class="menu-item">
+                <img src="https://t3.ftcdn.net/jpg/06/55/07/94/360_F_655079478_vLyzPYqiaaCQbdf5aJfzjn9hAUmvvLjr.jpg" alt="Strawberry Cheesecake">
+                <div class="info">
+                    <span class="name">Strawberry Cheesecake</span>
+                    <p class="description">Creamy cheesecake topped with fresh strawberries and a drizzle of berry sauce.</p>
+                </div>
+                <span class="price">₹ 399</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

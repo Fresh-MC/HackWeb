@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>VR</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+    }
+
+    #fullscreen-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: black;
+    }
+
+    #fullscreen-image {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+      display: none;
+      transition: transform 0.5s ease-out, filter 0.5s ease-out;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 3em;
+      color: white;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    #prev-arrow {
+      left: 10px;
+    }
+
+    #next-arrow {
+      right: 10px;
+    }
+
+    #overlay-text {
+      position: absolute;
+      top: 20px; /* Adjusted to top middle */
+      left: 50%; /* Adjusted to top middle */
+      transform: translateX(-50%); /* Centering the text */
+      color: white;
+      font-size: 2em;
+      font-family: sans-serif;
+      z-index: 10;
+      pointer-events: none;
+      text-align: center; /* Center text inside the element */
+      padding: 15px 30px; /* Padding inside the rounded box */
+      background-color: rgba(0, 0, 0, 0.7); /* Slight black background */
+      border-radius: 25px; /* Creates rounded corners */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Adds shadow for better visibility */
+    }
+  </style>
+</head>
+<body>
+
+<div id="fullscreen-container">
+  <img id="fullscreen-image" src="" alt="Fullscreen Image">
+  <div id="prev-arrow" class="arrow">&lt;</div>
+  <div id="next-arrow" class="arrow">&gt;</div>
+  <div id="overlay-text">Live Visuals</div>
+</div>
+
+<script>
+  const images = [
+    "https://media.istockphoto.com/id/1411971240/photo/wine-and-champain-glass-in-luxury-weddings-and-events.jpg?s=612x612&w=0&k=20&c=YVSlq0UuN0rpB252gO77eKcqc5DI0aNRQZI8lTSAZhY=",
+    "https://assets.architecturaldigest.in/photos/64f85037ec0bc118bdd98aba/master/pass/Untitled%20design%20(14).png",
+    "https://img.freepik.com/free-photo/restaurant-hall-with-leather-armchairs-french-windows_140725-8445.jpg?t=st=1741418362~exp=1741421962~hmac=9790c1bb2172931c6aea69ef7025a7ef7f19730f2a037bfaa8d75a7f4bdc3d41&w=1380",
+    "https://img.freepik.com/free-photo/hotel-lobby-interior_1127-3423.jpg?t=st=1741418675~exp=1741422275~hmac=44a97e64181b44ec9da7f3dc7cb9fe6c2609d2594b8ed9ff02334b4ab8f174b7&w=1380",
+    "https://img.freepik.com/free-photo/blue-chairs-travel-ocean-umbrella_1203-4636.jpg?t=st=1741418880~exp=1741422480~hmac=ba5a8ac982f4d7cbd99c7122aa329f31014fbacfcb385c8aff104d4a43027280&w=1380",
+    "https://img.freepik.com/free-photo/restaurant-hall-with-red-brick-walls-wooden-tables-pipes-ceiling_140725-8504.jpg?t=st=1741418803~exp=1741422403~hmac=1c2c597ca3c9ef89ac23ca562fe15ea701f62bca88fa52e2a8bc635738bb4c09&w=1380",
+    "https://img.freepik.com/free-photo/restaurant-hall-classic-style-with-green-wooden-chairs-curtains_140725-8026.jpg?t=st=1741418860~exp=1741422460~hmac=466c02f23ae5d722b3f7f56e5e67ec8faf01d1c8ede75823310345912eeceb17&w=1380",
+    "https://img.freepik.com/free-photo/restaurant-open-space-new-concept_140725-7438.jpg?t=st=1741418897~exp=1741422497~hmac=e80dea763edf39ba423c446759e745724bd635fa2b2794b49ebe612b3f8ee839&w=1380",
+    "https://img.freepik.com/free-photo/outdoor-restaurant-with-tables-set-wedding-celebration-marietta-georgia-us_181624-58705.jpg?t=st=1741419046~exp=1741422646~hmac=ef01d55608712b7c621491a2540b7f809472e1c1ea899e2c145aa31885101f40&w=1380"
+  ];
+
+  let currentIndex = 0;
+  const fullscreenImage = document.getElementById("fullscreen-image");
+  const prevArrow = document.getElementById("prev-arrow");
+  const nextArrow = document.getElementById("next-arrow");
+
+  function showImage(index) {
+    if (index >= 0 && index < images.length) {
+      fullscreenImage.src = images[index];
+      fullscreenImage.style.display = "block";
+      fullscreenImage.style.transform = "translateX(0)";
+      fullscreenImage.style.filter = "blur(0px)";
+      currentIndex = index;
+    }
+  }
+
+  function hideImage(direction) {
+    if (direction === "next") {
+      fullscreenImage.style.transform = "translateX(-50px)";
+    } else {
+      fullscreenImage.style.transform = "translateX(50px)";
+    }
+    fullscreenImage.style.filter = "blur(5px)";
+  }
+
+  nextArrow.addEventListener("click", () => {
+    hideImage("next");
+    setTimeout(() => {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    }, 250);
+  });
+
+  prevArrow.addEventListener("click", () => {
+    hideImage("prev");
+    setTimeout(() => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
+    }, 250);
+  });
+
+  fullscreenImage.addEventListener("click", () => {
+    fullscreenImage.style.display = "none";
+  });
+
+  // Show the first image when the page loads
+  showImage(currentIndex);
+</script>
+
+</body>
+</html>

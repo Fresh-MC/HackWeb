@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Booking</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9fcfe;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+            background-image: url(https://i.imgur.com/fBeV4Dj.jpeg);
+            background-size: 1700px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header img {
+            width: 150px;
+        }
+        .booking-container {
+            background: rgba(244, 241, 241, 0.187);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+        .booking-container h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .booking-container input, .booking-container select, .booking-container button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .booking-container button {
+            background: #ff6600;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .booking-container button:hover {
+            background: #e65c00;
+        }
+        .image-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .image-gallery img {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+        }
+        .image-gallery img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="https://i.imgur.com/dQcrMKF.png" alt="Restaurant Logo">
+        <h1>꧁༺ 𝓦𝓮𝓵𝓬𝓸𝓶𝓮 𝓽𝓸 𝓖𝓸𝓾𝓻𝓶𝓮𝓽 𝓓𝓮𝓵𝓲𝓰𝓱𝓽 ༻꧂</h1>
+        <p>Reserve your table for an exquisite dining experience.</p>
+    </div>
+    <div class="booking-container">
+        <h2>Book a Table</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <input type="date" required>
+            <input type="time" required>
+            <select required>
+                <option value="">Number of Guests</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5+">5+</option>
+            </select>
+            <button type="submit">Reserve Now</button>
+        </form>
+    </div>
+</body>
+</html>

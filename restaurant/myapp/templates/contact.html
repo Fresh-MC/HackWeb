@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Opening Hours</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #FAFAE6;
+            overflow-x: hidden;
+        }
+
+        /* Full-page Contact Section */
+        .contact-section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('restaurant2.jpg') no-repeat center center;
+            background-size: cover;
+        }
+
+        .overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(100, 7, 7, 0.4);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .contact-content {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+
+        .subheading {
+            font-size: 24px;
+            font-weight: 300;
+            font-family: 'Georgia', serif;
+            margin-bottom: 10px;
+        }
+
+        .heading {
+            font-size: 48px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        /* Scroll-down arrow */
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            color: white;
+            animation: bounce 1.5s infinite;
+            cursor: pointer;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Contact & Opening Hours Section */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 800px;
+            width: 90%;
+            margin: 50px auto;
+            padding-top: 50px;
+        }
+
+        .contact {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .contact h2 {
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            color: rgba(100, 7, 7, 0.4);
+        }
+
+        .three {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .one p, .two span {
+            font-size: 14px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .one strong {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .social-icon {
+            font-size: 30px;
+            margin-top: 15px;
+            color: #002B26;
+            cursor: pointer;
+        }
+
+        .opening-hours {
+            flex: 1;
+            background-color: rgba(100, 7, 7, 0.4);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .opening-hours h2 {
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .opening-hours p {
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+            margin: 5px 0;
+        }
+
+        .highlight {
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Full-page Contact Section -->
+    <section class="contact-section">
+        <div class="overlay"></div>
+        <div class="contact-content">
+            <p class="subheading">Thanks for reaching out!</p>
+            <h1 class="heading">Restaurant Tove</h1>
+            <p class="subheading">Fine Dining & Memorable Experiences</p>
+        </div>
+        <a href="#contact-info">
+            <div class="scroll-down">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </a>
+    </section>
+
+    <!-- Contact & Opening Hours Section -->
+    <section id="contact-info">
+        <div class="container">
+            <!-- Contact Section -->
+            <div class="contact">
+                <h2>Contact Us</h2>
+                <div class="three">
+                    <div class="one">
+                        <p><strong>Telephone</strong></p>
+                        <p><strong>Email</strong></p>
+                        <p><strong>Locate Us</strong></p>
+                    </div>
+                    <div class="two">
+                        <span>0422-706357</span>
+                        <span>info@restauranttove.se</span>
+                        <span>123, Main Road, Civil Lines, Nagpur, Maharashtra - 440004</span>
+                    </div>
+                </div>
+                <h2>FOLLOW US</h2>
+                <div class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </div>
+            </div>
+
+            <!-- Opening Hours Section -->
+            <div class="opening-hours">
+                <h2>OPENING HOURS</h2>
+                <p><strong>Monday-Thursday</strong> <span>10:30 - 22:00</span></p>
+                <p><strong>Friday</strong> <span>10:30 - 23:00</span></p>
+                <p><strong>Saturday</strong> <span>13:00 - 23:00</span></p>
+                <p><strong>Sunday</strong> <span>13:00 - 21:00</span></p>
+                <p class="highlight">Afterwork drinks at Tove between 3pm-6pm!</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

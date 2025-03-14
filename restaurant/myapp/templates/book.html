@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Services</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .header {
+            background: #b96d6d;
+            color: white;
+            padding: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .booking-card {
+            background: white;
+            flex: 1;
+            margin: 10px;
+            padding: 40px;
+            border-radius: 50px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .booking-card:hover {
+            transform: scale(1.05);
+            background: #ffe6cc;
+        }
+        .booking-card img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            height: 220px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        .booking-card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .booking-card p {
+            color: white;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .booking-card a {
+            text-decoration: none;
+            background: #ba6d5a;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-size: 18px;
+            transition: background 0.3s;
+        }
+        .booking-card a:hover {
+            background: #e60000;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Booking Services</div>
+    <div class="container">
+        <div class="booking-card">
+            <img src="https://bookya.com.au/wp-content/uploads/2022/04/an-efficient-online-restaurant-booking-system-with-real-time-visibility-trootech-business-solutions.jpg" alt="Booking Table">
+            <a href="{% url 'booking' %}"><h3>Table Booking</h3>
+            <p>Reserve your table at our restaurant for a perfect dining experience with premium service.</p>
+            <a href="#">Book Now</a>
+        </div>
+        <div class="booking-card">
+            <img src="https://cdn.prod.website-files.com/63f501f2fcfc599ea419f99b/6538c6ef3f9f52c642756913_iStock-912129754.jpg" alt="Event Booking">
+            <a href="{% url 'event' %}"><h3>Event Booking</h3>
+            <p>Celebrate your special occasions at our luxurious venue with customized event planning.</p>
+            <a href="#">Book an Event</a>
+        </div>
+        <div class="booking-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0I50zbzhua2fxAZO6KnWUorWuJntEy1c68Q&s" alt="Food Booking">
+            <a href="{% url 'food' %}"><h3>Food Booking</h3>
+            <p>Order from a wide variety of delicious meals and have them delivered straight to your doorstep.</p>
+            <a href="#">Order Food</a>
+        </div>
+    </div>
+</body>
+</html>
